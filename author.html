@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head> <Title>Author</Title></head>
+<body>
+<h1>Author entry SaiRam Muthyala</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="pwd">The hidden author name </label>
+    <input type ="password" id="pwd" name="pwd" value = "Dickens"> <br>
+
+    <label for="author">Guess the author </label>
+    <input type ="text" id="author" name="author" autofocus> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+<p id="good/oopsCount"> </p>
+<script> 
+good = 0
+oops = 0
+function checkAuthor (){
+    console.log("Getting form values")
+    pwd = document.getElementById("pwd").value
+    author = document.getElementById("author").value
+    
+    if(pwd == author){
+        good++
+        alert("You got it right")
+        document.getElementById("good/oopsCount").innerHTML = "Good Count: "+ good
+    }
+    else{
+        oops++
+        alert("Sorry");
+        document.getElementById("good/oopsCount").innerHTML = "Oops Count: "+ oops
+    }   
+}
+</script>
+
+</body>
+</html> 

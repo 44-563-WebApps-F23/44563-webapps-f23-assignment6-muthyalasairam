@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Tips</title>
+ </head>
+<body>
+    <h2>Shows tip amounts Sairam Muthyala</h2>
+<form>
+    <label for="base">Enter base amount</label>
+    <input type ="number" id="base" value=50> <br>
+
+    <label for="conversion">Enter the tip percent</label>
+    <input type ="number" id="conversion" value=15> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+
+function tips (){
+   console.log("tips")
+    base = parseInt(document.getElementById("base").value)
+    conversion = parseInt(document.getElementById("conversion").value)
+    tip = "Tips are: "
+    add = 0;
+    for(i=1;i<=5;i++){
+       add = base*(conversion/100)
+       tip = tip + show(conversion,add)
+       conversion = conversion + 4
+    }
+    document.getElementById("result").innerHTML=tip
+   
+}
+function show(conversion,add){
+    return conversion+"%"+ " is "+ add + ";"
+}
+</script>
+
+</body>
+</html> 

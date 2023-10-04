@@ -3,7 +3,6 @@
  <head> <Title>Author</Title></head>
 <body>
 <h1>Author entry SaiRam Muthyala</h1>
-<h2>Getting input</h2>
 
 <form>
     <label for="pwd">The hidden author name </label>
@@ -14,27 +13,54 @@
 
     <input type="button" onclick="checkAuthor()" value="Check the guess">
 </form>
-<p id="good/oopsCount"> </p>
+<p id="good/oopsCount">Good/Oops</p>
 <script> 
-good = 0
-oops = 0
+var good = 0
+var oops = 0
 function checkAuthor (){
-    console.log("Getting form values")
     pwd = document.getElementById("pwd").value
     author = document.getElementById("author").value
     
     if(pwd == author){
         good++
-        alert("You got it right")
-        document.getElementById("good/oopsCount").innerHTML = "Good Count: "+ good
+        alert("You got it right")       
     }
     else{
         oops++
-        alert("Sorry");
-        document.getElementById("good/oopsCount").innerHTML = "Oops Count: "+ oops
+        alert("Sorry");     
     }   
+    document.getElementById("good/oopsCount").innerHTML = "Good: "+ good +", "+"Oops: "+oops
 }
 </script>
+
+<div class="container">
+    <img id="img" src= "Maryville.jpg" width="100" height="100" onclick="selectImage()">
+    <script>
+        var useImage = 1
+        function selectImage(){
+        switch (useImage){
+            case 1:
+                document.getElementById('img').src= "Tokyo.jpg"
+                useImage =2
+                break;
+            case 2:
+                document.getElementById('img').src= "Udaipur.jpg"
+                useImage=3
+                break;
+            case 3:
+                document.getElementById('img').src= "Maryville.jpg"
+                useImage=1
+                break;
+            default:
+                document.getElementById('img').src= "Maryville.jpg"
+                break;
+
+
+        }
+        }
+
+    </script>
+</div>
 
 </body>
 </html> 

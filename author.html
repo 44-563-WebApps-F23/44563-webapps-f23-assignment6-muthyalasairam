@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
- <head> <Title>Author</Title></head>
+ <head> 
+    <Title>Author</Title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 <body>
 <h1>Author entry SaiRam Muthyala</h1>
 
@@ -11,7 +14,7 @@
     <label for="author">Guess the author </label>
     <input type ="text" id="author" name="author" autofocus> <br>
 
-    <input type="button" onclick="checkAuthor()" value="Check the guess">
+    <input class="btn btn-primary" type="button" onclick="checkAuthor()" value="Check the guess" id="check">
 </form>
 <p id="good/oopsCount">Good/Oops</p>
 <script> 
@@ -27,7 +30,16 @@ function checkAuthor (){
     }
     else{
         oops++
-        alert("Sorry");     
+        if(oops === 7)
+        {
+            document.getElementById('check').disabled = true;
+            alert("Sorry, ran out of guesses");
+        }
+        else
+        {
+            alert("Sorry");    
+        }
+         
     }   
     document.getElementById("good/oopsCount").innerHTML = "Good: "+ good +", "+"Oops: "+oops
 }

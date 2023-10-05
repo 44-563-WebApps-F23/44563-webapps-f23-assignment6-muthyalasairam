@@ -38,6 +38,35 @@ function show(conversion,add){
     return conversion+"%"+ " is "+ add + ";"
 }
 </script>
+<form>
+    <input type="radio" id="sum" name="radio" value="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label></br>
+  
+    <input type="radio" id="diff" name= "radio" value = "diff" onclick="chooseOp()">
+    <label for="diff">Difference</label></br>
+    
+    <input type="radio" id="product"name= "radio" value ="product" onclick="chooseOp()">
+    <label for="product">Product</label></br>
 
+    
+  </form>
+ <p id="radioResult"></p>
+ <script>
+    function chooseOp(){
+        base = parseInt(document.getElementById("base").value);
+        conversion = parseInt(document.getElementById("conversion").value);
+        result = 0;
+        if(document.getElementById("sum").checked){
+            result = base + conversion;
+        }
+        if (document.getElementById("diff").checked){
+            result = base - conversion;
+        }
+        if (document.getElementById("product").checked){
+            result = base * conversion;
+        }
+        document.getElementById("radioResult").innerHTML=result;
+    }
+ </script>
 </body>
 </html> 
